@@ -13,5 +13,4 @@ function Connexion()
         die('La Connexion à la base de données est impossible'.$e->getMessage());
     }
 }
-Connexion();
 ?>
