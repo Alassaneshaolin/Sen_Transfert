@@ -13,13 +13,17 @@ function insertion()
     $Insertion->execute();
 }
 insertion();
+header('location:../index.php');
 
 function affichage()
 {
     GLOBAL $db;
     $Requete = "SELECT * FROM utilisateur";
     $Affichage = $db->prepare($Requete);
-    $Affichage -> bindParam();
+    $Affichage->execute();
+    $Affichage = $Affiche -> fetchAll();
 }
+affichage();
+
 header('location:../index.php');
 ?>

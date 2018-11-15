@@ -30,5 +30,29 @@ $db = Connexion();
     <button type="submit" name="Envoyer">Envoyer</button>
     </div>
     </form>
+
+    <div>Affichage de la table</div>
+        <table border="2">
+	<tr>
+		<td>Id produit</td>
+		<td>Libellé</td>
+		<td>Prix</td>
+		<td>Description</td>
+		<td>Modifier</td>
+		<td>Supprimer</td>
+	</tr>
+	<?php
+	foreach ($affiche as $rowproduit)
+	{ ?>
+	<tr>
+		<td><?= $rowproduit['id_produit']?></td>
+		<td><?= $rowproduit['libelle']?></td>
+		<td><?= $rowproduit['prix']?></td>
+		<td><?= $rowproduit['description']?></td>
+		<td><a href="Modifier.php?id_produit=<?= $rowproduit['id_produit']?>">Modifier</a></td>
+		<td><a href="Supprimer.php?id_produit=<?= $rowproduit['id_produit']?>">Supprimer</a></td>
+	</tr>
+	<?php } ?>
+</table>
 </body>
 </html>
